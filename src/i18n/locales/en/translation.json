@@ -1,10 +1,10 @@
 {
-  "welcome": "Welcome to the Tourism App",
-  "home": "Home",
-  "about": "About Us",
-  "contact": "Contact",
+  "welcome": "Welcome",
+  "Home": "Home",
+  "AboutUs": "About Us",
+  "ContactUs": "Contact Us",
   "attractions": "Attractions",
-   "Products": "Products",
-  "Pricing": "Pricing",
-  "Blog": "Blog"
+  "Blog": "Blog",
+  "Destinations": "Destinations",
+  "Cities": "Cities"
 }

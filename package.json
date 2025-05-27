@@ -16,6 +16,7 @@
     "@mui/material": "^7.1.0",
     "@mui/styled-engine-sc": "^7.1.0",
     "@tailwindcss/vite": "^4.1.7",
+    "@tanstack/react-query": "^5.77.2",
     "axios": "^1.9.0",
     "chart.js": "^4.4.9",
     "framer-motion": "^12.12.2",

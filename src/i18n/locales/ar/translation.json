@@ -1,10 +1,12 @@
 {
-  "welcome": "مرحبًا بك في تطبيق السياحة",
-  "home": "الرئيسية",
-  "about": "من نحن",
-  "contact": "اتصل بنا",
+  "welcome": "مرحبًا بك",
+  "Home": "الرئيسية",
+  "AboutUs": "من نحن",
+  "ContactUs": "اتصل بنا",
   "attractions": "المعالم",
-  "Products": "المنتجات",
-  "Pricing": "الأسعار",
-  "Blog": "مدونة"
+  "Blog": "مدونة",
+  "Destinations": "اتجاهات",
+  "Cities": "المدن"
+  
+  
 }
