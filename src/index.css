@@ -1,6 +1,5 @@
- 
+ @import url('https://fonts.googleapis.com/css2?family=Kapakana:wght@300..400&display=swap');
 
- 
 @import "tailwindcss";
 
 @theme {
@@ -8,5 +7,5 @@
     --color-DesertSand	: #EDC9AF;
     --color-PharaohGold	: #D4AF37;
     --color-PyramidStone: #8B7D6B;
---font-kapakana: "Kapakana", cursive;
+--font-Kapakana: "Kapakana", sans-serif;
 }

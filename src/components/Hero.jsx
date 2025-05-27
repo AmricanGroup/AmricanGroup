@@ -115,12 +115,12 @@ export default function Hero() {
     >
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black opacity-30"></div>
-
+ 
       {/* Content */}
       <section className="relative p-6 m-6 sm:p-8 sm:m-8 md:p-12 md:m-12 text-white z-10 w-full ">
         <div className="text-center ">
         
-          <Typography sx={{ padding: 0, margin: 0  }}  className="font-kapakana" variant="h3" gutterBottom>
+          <Typography sx={{ padding: 0, margin: 0  }}   variant="h3" gutterBottom>
             Welcome to the Land of Civilization Egypt
           </Typography>
           <Typography variant="h6" gutterBottom>
