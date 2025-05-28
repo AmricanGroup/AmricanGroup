@@ -1,6 +1,5 @@
-import React, { Fragment, useState } from "react";
+import  {   useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,12 +12,17 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import AdbIcon from "@mui/icons-material/Adb";
 import ToggleButton from "@mui/material/ToggleButton";
-
+ 
 import { useTranslation } from "react-i18next";
 import "../i18n";
+ 
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
+  useEffect(() => {
+  document.dir = i18n.language === "ar" ? "rtl" : "ltr";
+}, [i18n.language]);
+
 
   const pages = [
     { name: "Home", path: "" },
@@ -64,11 +68,10 @@ export default function Navbar() {
     <AppBar
       sx={{
         bgcolor: "transparent",
-        boxShadow: "none",
-        color: "black",
+        
       }}
     >
-      <Container maxWidth="xl" className="border-b-2 border-PyramidStone">
+      <Container maxWidth="xl" className="  border-PyramidStone">
         <Toolbar disableGutters className="flex justify-between items-center">
           {/* Logo */}
           <Typography
@@ -87,7 +90,9 @@ export default function Navbar() {
             }}
           >
             LOGO
+            
           </Typography>
+          
 
           {/* Menu Icon (Mobile) */}
           <Box
