@@ -1,12 +1,16 @@
-import React from "react";
+
 import { Helmet } from "react-helmet";
 import Hero from "../components/Hero";
-import icon from "../assets/images/icon.png";  // Make sure this path is correct and the image exists
+import icon from "../assets/images/icon.png"; // Make sure this path is correct and the image exists
+import Test from "../components/test";
+ 
+ 
+ 
+ 
 
 export default function Home() {
   return (
     <>
-    
       <Helmet>
         <title>
           Top Tourist Attractions in Egypt | Discover the Land of the Pharaohs
@@ -54,14 +58,13 @@ export default function Home() {
         />
 
         {/* Favicon: This will work if icon is a valid imported image */}
-   <link rel="icon" href={icon} type="image/png" />
-<link rel="shortcut icon" href={icon} type="image/png" />
-
-
-
+        <link rel="icon" href={icon} type="image/png" />
+        <link rel="shortcut icon" href={icon} type="image/png" />
       </Helmet>
-
+      
       <Hero />
+      <Test/>
+ 
     </>
   );
 }
