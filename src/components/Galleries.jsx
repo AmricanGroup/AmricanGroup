@@ -1,10 +1,15 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
-
+import Typography from "@mui/material/Typography";
 export default function GalleriesMUI() {
   return (
     <>
-      <section className="w-5/6 mx-auto ">
+      <section className="w-5/6 mx-auto  my-5 bg-amber-200">
+        <Box>
+          <Typography variant="h1" gutterBottom>
+            h1. Heading
+          </Typography>
+        </Box>
         <Box className="bg-amber-400 mx-auto " sx={{ px: 2, py: 4 }}>
           <Grid
             direction="row"

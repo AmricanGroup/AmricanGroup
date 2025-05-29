@@ -4,6 +4,10 @@ import icon from "../assets/images/icon.png"; // Make sure this path is correct 
  
 import About from "../components/About";
 import Galleries from "../components/Galleries";
+import PackageCard from "../components/PackageCard";
+import Testimonials from "../components/Testimonials";
+ 
+ 
 
 export default function Home() {
  
@@ -63,8 +67,11 @@ export default function Home() {
       <Hero />
       <About />
  
-      <Galleries />
-
+      <Galleries />   
+       <PackageCard />
+ 
+ <Testimonials/>
+ 
     </>
   );
 }

@@ -7,6 +7,7 @@ import Cities from "../pages/Cities";
 import Blog from "../pages/Blog";
 import ContactUs from "../pages/ContactUs";
 import AboutUs from "../pages/AboutUs";
+import Packages from "../pages/Packages";
  
 
 let router = createBrowserRouter([
@@ -20,6 +21,7 @@ let router = createBrowserRouter([
       {path:"blog",element:<Blog/>},
       {path:"contactUs",element:<ContactUs/>},
       {path:"aboutUs",element:<AboutUs/>},
+      {path:"package",element:<Packages/>},
 
 
     ]
