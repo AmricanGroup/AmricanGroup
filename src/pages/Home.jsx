@@ -1,14 +1,12 @@
-
 import { Helmet } from "react-helmet";
 import Hero from "../components/Hero";
 import icon from "../assets/images/icon.png"; // Make sure this path is correct and the image exists
-import Test from "../components/test";
  
- 
- 
- 
+import About from "../components/About";
+import Galleries from "../components/Galleries";
 
 export default function Home() {
+ 
   return (
     <>
       <Helmet>
@@ -61,10 +59,12 @@ export default function Home() {
         <link rel="icon" href={icon} type="image/png" />
         <link rel="shortcut icon" href={icon} type="image/png" />
       </Helmet>
-      
+
       <Hero />
-      <Test/>
+      <About />
  
+      <Galleries />
+
     </>
   );
 }
