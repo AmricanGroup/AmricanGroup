@@ -6,6 +6,8 @@ import About from "../components/About";
 
 import PackageCard from "../components/PackageCard";
 import Testimonials from "../components/Testimonials";
+import CitiesGroups from "../components/CitiesGroups";
+ 
  
  
 
@@ -67,10 +69,9 @@ export default function Home() {
       <Hero />
       <About />
       <PackageCard />
-     
-       
- 
- <Testimonials/>
+    <Testimonials/>
+    <CitiesGroups/>
+  
  
     </>
   );
