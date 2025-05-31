@@ -56,7 +56,7 @@ export default function Hero() {
           >
             {t(
               "We are ready to greet you all year round to explore the most famous tourist attractions Egypt has to offer, known worldwide"
-            )}{" "}
+            )}
             .
           </Typography>
         </div>

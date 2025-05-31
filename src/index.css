@@ -1,5 +1,6 @@
  @import url('https://fonts.googleapis.com/css2?family=Kapakana:wght@300..400&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Changa:wght@200..800&family=Noto+Naskh+Arabic:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
  @import "tailwindcss";
 
  @theme {
@@ -14,4 +15,5 @@
      --font-Rubik: "Rubik", sans-serif;
      --font-Changa: "Changa", sans-serif;
      --font-third: "Noto Naskh Arabic", serif;
+     --font-Dancing: "Dancing Script", cursive;
  }
