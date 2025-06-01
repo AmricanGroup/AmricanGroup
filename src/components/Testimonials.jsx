@@ -37,6 +37,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <>
+      {" "}
       <div
         className="py-32 bg-gray-300 my-5"
         style={{
@@ -48,11 +49,11 @@ export default function Testimonials() {
         }}
       >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="mb-12 text-center text-white font-Rubik">
-            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
+          <div className="mb-12 text-center text-white   px-4">
+            <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl font-bold font-Rubik leading-tight">
               What Travelers Are Saying About Our Landmarks
             </h2>
-            <p className="max-w-2xl mx-auto text-lg text-white font-Changa">
+            <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white font-Changa">
               Hear from visitors who have been captivated by Egypt's ancient
               wonders
             </p>
@@ -65,45 +66,33 @@ export default function Testimonials() {
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            spaceBetween={20}
           >
             {testimonials.map((item, idx) => (
               <SwiperSlide key={idx}>
-                <div className="p-4 sm:p-6 bg-white rounded-lg shadow-md transition-transform h-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-start mb-4">
-                      <img
-                        className="w-12 h-12 rounded-full mr-4"
-                        src={img}
-                        alt={item.name}
-                      />
-                      <div className="flex-1">
-                        <h3 className="font-bold font-Rubik text-base sm:text-lg">
-                          {item.name}
-                        </h3>
-                        <p className="text-sm text-gray-500 font-Changa">
-                          {item.username}
-                        </p>
-                      </div>
-                      <div className="ml-auto text-yellow-500">
-                        <svg
-                          className="w-6 h-6"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-                      </div>
+                <div className="p-6 bg-white rounded-lg shadow-md transition-transform">
+                  <div className="flex items-start mb-4">
+                    <img
+                      className="w-12 h-12 rounded-full mr-4"
+                      src={img}
+                      alt={item.name}
+                    />
+                    <div className="flex-1">
+                      <h3 className="font-bold font-Rubik">{item.name}</h3>
+                      <p className="text-sm text-gray-500 font-Changa">
+                        {item.username}
+                      </p>
                     </div>
-                    <p className="text-gray-700 font-Noto text-sm sm:text-base">
-                      {item.text}
-                    </p>
+                    <div className="ml-auto text-yellow-500">
+                      <svg
+                        className="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                      </svg>
+                    </div>
                   </div>
+                  <p className="text-gray-700 font-Noto">{item.text}</p>
                   <div className="flex items-center mt-4 text-gray-500 text-sm">
                     <span className="flex items-center mr-4">
                       <svg

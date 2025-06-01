@@ -1,4 +1,4 @@
-import  {   useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -12,17 +12,17 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import AdbIcon from "@mui/icons-material/Adb";
 import ToggleButton from "@mui/material/ToggleButton";
- 
+import icon from "../assets/images/7.jpg";
 import { useTranslation } from "react-i18next";
 import "../i18n";
- 
+import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   useEffect(() => {
-  document.dir = i18n.language === "ar" ? "rtl" : "ltr";
-}, [i18n.language]);
-
+    document.dir = i18n.language === "ar" ? "rtl" : "ltr";
+  }, [i18n.language]);
 
   const pages = [
     { name: "Home", path: "" },
@@ -63,12 +63,34 @@ export default function Navbar() {
   const handleCloseSubMenu = () => {
     setAnchorElSubMenu(null);
   };
+  const settings = ["Profile", "Account", "Dashboard", "Logout"];
+  const [anchorElUser, setAnchorElUser] = useState(null);
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+  useEffect(() => {
+    const handleScrollUnlock = () => {
+      document.body.style.overflow = "auto";
+    };
+
+    if (!anchorElNav && !anchorElUser && !anchorElSubMenu) {
+      handleScrollUnlock();
+    }
+
+    return () => {
+      handleScrollUnlock(); // للتأكد عند الإغلاق
+    };
+  }, [anchorElNav, anchorElUser, anchorElSubMenu]);
 
   return (
     <AppBar
       sx={{
         bgcolor: "transparent",
-        
       }}
     >
       <Container maxWidth="xl" className="  border-PyramidStone">
@@ -90,16 +112,14 @@ export default function Navbar() {
             }}
           >
             LOGO
-            
           </Typography>
-          
 
           {/* Menu Icon (Mobile) */}
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
-             
+
               margin: "0 20px",
               borderRadius: 1,
             }}
@@ -126,14 +146,11 @@ export default function Navbar() {
                 page.submenu ? (
                   <dev key={page.name}>
                     <MenuItem onClick={handleOpenSubMenu} aria-haspopup="true">
-                      <Typography textAlign="center"  >
-                        {t(page.name)}
-                      </Typography>
+                      <Typography textAlign="center">{t(page.name)}</Typography>
                     </MenuItem>
                     <Menu
                       id="submenu-mobile"
                       anchorEl={anchorElSubMenu}
-
                       onClose={handleCloseSubMenu}
                       anchorOrigin={{ vertical: "top", horizontal: "right" }}
                       transformOrigin={{ vertical: "top", horizontal: "left" }}
@@ -165,7 +182,7 @@ export default function Navbar() {
                   </MenuItem>
                 )
               )}
-                 <MenuItem>
+              <MenuItem>
                 <ToggleButton
                   value="check"
                   selected={i18n.language === "ar"}
@@ -216,7 +233,6 @@ export default function Navbar() {
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
               justifyContent: "center",
-            
             }}
           >
             {pages.map((page) =>
@@ -236,6 +252,7 @@ export default function Navbar() {
                     anchorEl={anchorElSubMenu}
                     open={Boolean(anchorElSubMenu)}
                     onClose={handleCloseSubMenu}
+                    disableScrollLock={true}
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
                     transformOrigin={{ vertical: "top", horizontal: "left" }}
                     sx={{ minWidth: 180 }}
@@ -246,7 +263,6 @@ export default function Navbar() {
                         component={Link}
                         to={sub.path}
                         onClick={handleCloseSubMenu}
-                         
                       >
                         {t(sub.name)}
                       </MenuItem>
@@ -284,6 +300,37 @@ export default function Navbar() {
             >
               {i18n.language === "ar" ? "AR" : "EN"}
             </ToggleButton>
+          </Box>
+
+          <Box sx={{ flexGrow: 0, ml: 2 }}>
+            <Tooltip title="Open profile">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar alt="Remy Sharp" src={icon} />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: "45px" }}
+              disableScrollLock={true}
+              id="menu-appbar-user"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
           </Box>
         </Toolbar>
       </Container>

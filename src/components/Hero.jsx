@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import img from "../assets/images/5.jpg";
+import img from "../assets/images/10.jpg";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";

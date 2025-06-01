@@ -58,7 +58,7 @@ export default function CitiesGroups() {
                       minWidth: 80,
                     },
                     "& .Mui-selected": {
-                      color: "var(--color-PharaohGoldx)",
+                      color: "var(--color-section)",
                     },
                   }}
                 >
