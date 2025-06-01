@@ -8,6 +8,8 @@ import Blog from "../pages/Blog";
 import ContactUs from "../pages/ContactUs";
 import AboutUs from "../pages/AboutUs";
 import Packages from "../pages/Packages";
+import BlogCmopnent from "../components/BlogCmopnent";
+import TouristLandmark from "../pages/TouristLandmark";
  
 
 let router = createBrowserRouter([
@@ -22,6 +24,8 @@ let router = createBrowserRouter([
       {path:"contactUs",element:<ContactUs/>},
       {path:"aboutUs",element:<AboutUs/>},
       {path:"package",element:<Packages/>},
+      {path:"blogContent",element:<BlogCmopnent/>},
+      {path:"TouristLandmark",element:<TouristLandmark/>},
 
 
     ]

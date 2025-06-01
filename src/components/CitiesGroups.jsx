@@ -13,29 +13,54 @@ export default function CitiesGroups() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
- 
+
   return (
     <>
-      <section className="   py-5 my-5">
-        <div className="title text-center  text-white py-3 ">
-          <Typography variant="h4" gutterBottom>
-            h4. Heading
+      <section className=" py-5 my-10">
+        <div className="title text-center text-black py-3 px-4">
+            <h3 className=" font-Dancing text-7xl text-orange-400  ">Visit Egypt</h3>
+          <Typography
+            variant="h4"
+            gutterBottom
+            fontSize={{ xs: "1.5rem", md: "2.125rem" }}
+            fontFamily={"var(--font-Rubik)"}
+          >
+            Discover Egypt's Tourist Wonders
           </Typography>
-          <Typography variant="subtitle1" gutterBottom>
-            subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quos blanditiis tenetur
-          </Typography>
+         
         </div>
-        <div className="tabs    mx-auto">
+
+        <div className="tabs mx-auto px-4">
           <Box sx={{ width: "100%", typography: "body1" }}>
             <TabContext value={value}>
-              <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+              <Box>
                 <TabList
+                  slotProps={{
+                    indicator: {
+                      sx: {
+                        backgroundColor: "var(--color-PyramidStone)",
+                        height: "2px",
+                        borderRadius: "2px",
+                      },
+                    },
+                  }}
                   onChange={handleChange}
                   aria-label="lab API tabs example"
                   centered
-                  textColor="secondary"
-                  indicatorColor="secondary"
+                  scrollButtons="auto"
+                  allowScrollButtonsMobile
+                  sx={{
+                    "& .MuiTab-root": {
+                      fontFamily: "var(--font-Changa)",
+                      color: "var(--color-PyramidStone)",
+                      textTransform: "capitalize",
+                      fontSize: { xs: "1rem", md: "1.2rem" },
+                      minWidth: 80,
+                    },
+                    "& .Mui-selected": {
+                      color: "var(--color-PharaohGoldx)",
+                    },
+                  }}
                 >
                   <Tab label="All" value="1" />
                   <Tab label="Cairo" value="2" />
@@ -43,11 +68,12 @@ export default function CitiesGroups() {
                   <Tab label="Luxor" value="4" />
                 </TabList>
               </Box>
+
               <TabPanel className="text-center" value="1">
                 <GalleryPhoto number={1} />
               </TabPanel>
               <TabPanel className="text-center" value="2">
-                <GalleryPhoto number={2}/>
+                <GalleryPhoto number={2} />
               </TabPanel>
               <TabPanel className="text-center" value="3">
                 <GalleryPhoto number={3} />

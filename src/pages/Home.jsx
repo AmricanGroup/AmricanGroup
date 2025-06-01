@@ -1,18 +1,15 @@
 import { Helmet } from "react-helmet";
 import Hero from "../components/Hero";
 import icon from "../assets/images/icon.png"; // Make sure this path is correct and the image exists
- 
+
 import About from "../components/About";
 
 import PackageCard from "../components/PackageCard";
 import Testimonials from "../components/Testimonials";
 import CitiesGroups from "../components/CitiesGroups";
- 
- 
- 
+import Blog from "./Blog";
 
 export default function Home() {
- 
   return (
     <>
       <Helmet>
@@ -69,10 +66,10 @@ export default function Home() {
       <Hero />
       <About />
       <PackageCard />
-    <Testimonials/>
-    <CitiesGroups/>
-  
- 
+      <Testimonials />
+      <CitiesGroups />
+      <Blog />
+      
     </>
   );
 }
